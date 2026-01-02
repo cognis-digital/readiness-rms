@@ -1,0 +1,23 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "cognis-readiness-rms"
+version = "0.1.0"
+description = "Unit-readiness C-rating dashboard (C1-C4) — personnel, equipment, training"
+license = {text = "Apache-2.0"}
+requires-python = ">=3.10"
+authors = [{name="Cognis Digital", email="suite@cognis.digital"}]
+readme = "README.md"
+keywords = ["military","ic","dod","cognis-digital","readiness-rms"]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "pytest-cov"]
+
+[project.scripts]
+readiness-rms = "readiness_rms.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["readiness_rms", "cognis_mil"]

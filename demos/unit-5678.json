@@ -1,0 +1,10 @@
+{
+  "unit_id": "BN-2-77-AR",
+  "personnel_assigned": 480,
+  "personnel_required": 700,
+  "personnel_deployable": 420,
+  "equipment_on_hand_pct": 65.0,
+  "equipment_mission_capable_pct": 55.0,
+  "training_current_pct": 50.0,
+  "inspection_pass_pct": 70.0
+}

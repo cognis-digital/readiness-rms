@@ -1,0 +1,10 @@
+{
+  "unit_id": "BN-1-23-IN",
+  "personnel_assigned": 642,
+  "personnel_required": 700,
+  "personnel_deployable": 580,
+  "equipment_on_hand_pct": 92.0,
+  "equipment_mission_capable_pct": 78.0,
+  "training_current_pct": 81.0,
+  "inspection_pass_pct": 88.0
+}
