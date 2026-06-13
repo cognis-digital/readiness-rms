@@ -5,6 +5,41 @@
 
 > Compute C1/C2/C3/C4 from public AR 220-1 / OPNAVINST 3501.226 doctrine. JSON in, finding-graded report out.
 
+## Usage — step by step
+
+`readiness-rms` computes unit readiness C-ratings (C1–C4) from public DoD-style inputs and reports any sub-readiness units as findings.
+
+1. **Install:**
+
+   ```bash
+   pip install cognis-readiness-rms      # or: pip install -e .
+   readiness-rms --version
+   ```
+
+2. **Run a scan** over your unit-data directory (`target` defaults to `.`):
+
+   ```bash
+   readiness-rms ./units --format console
+   ```
+
+3. **Emit JSON** and write it out (formats: `console`, `json`, `markdown`, `sarif`, `oscal`):
+
+   ```bash
+   readiness-rms ./units --format json --out readiness.json
+   ```
+
+4. **Read the result** — C4 units surface as `RR-C4-<unit>` (very high), C3 as `RR-C3-<unit>` (high), and ready units as `RR-OK-<unit>`:
+
+   ```bash
+   jq '.findings[] | {id, severity, message}' readiness.json
+   ```
+
+5. **Gate it in CI** — fail when any C4 (not-ready) unit appears:
+
+   ```bash
+   readiness-rms ./units --format sarif --out readiness.sarif --fail-on very_high
+   ```
+
 ## Upstream
 
 Forks / wraps **https://github.com/apache/superset**. See [`UPSTREAM.md`](./UPSTREAM.md) for the
