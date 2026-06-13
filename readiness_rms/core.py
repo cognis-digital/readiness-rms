@@ -2,7 +2,7 @@
 from __future__ import annotations
 import json
 from pathlib import Path
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from cognis_mil import ScanResult, Finding, Severity
 
 # C-rating thresholds (public DoD doctrine: AR 220-1, OPNAVINST 3501.226, etc.)
