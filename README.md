@@ -5,6 +5,69 @@
 
 > Compute C1/C2/C3/C4 from public AR 220-1 / OPNAVINST 3501.226 doctrine. JSON in, finding-graded report out.
 
+
+<!-- cognis:example:start -->
+## 🔎 Example output
+
+Real, reproducible output from the tool — runs offline:
+
+```console
+$ readiness-rms-emit --version
+readiness-rms 0.1.0
+```
+
+```console
+$ readiness-rms-emit --help
+usage: readiness-rms [-h] [--format {console,json,markdown,sarif,oscal}]
+                     [--out OUT]
+                     [--fail-on {very_high,high,moderate,low,none}]
+                     [--classification CLASSIFICATION] [-v]
+                     [target]
+
+readiness-rms — Cognis Digital · Military/IC ecosystem
+
+positional arguments:
+  target                Path/target
+
+options:
+  -h, --help            show this help message and exit
+  --format {console,json,markdown,sarif,oscal}
+  --out OUT             Write output to file
+  --fail-on {very_high,high,moderate,low,none}
+  --classification CLASSIFICATION
+                        Operator-supplied banner. PLACEHOLDER. Tool does not
+                        interpret.
+  -v, --version         show program's version number and exit
+```
+
+> Blocks above are real `readiness-rms` output — reproduce them from a clone.
+
+**Sample result format** _(illustrative values — run on your own data for real findings):_
+
+```
+{
+"readiness_rms": {
+"platform": "stix",
+"findings": [
+{
+"id": "1234567890",
+"name": "Example Finding 1",
+"description": "This is an example finding.",
+"created_at": "2023-02-20T14:30:00Z"
+},
+{
+"id": "2345678901",
+"name": "Example Finding 2",
+"description": "This is another example finding.",
+"created_at": "2023-02-21T10:45:00Z"
+}
+]
+}
+}
+```
+
+<!-- cognis:example:end -->
+
 ## Usage — step by step
 
 `readiness-rms` computes unit readiness C-ratings (C1–C4) from public DoD-style inputs and reports any sub-readiness units as findings.

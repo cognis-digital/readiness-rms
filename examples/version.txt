@@ -1,0 +1,3 @@
+$ readiness-rms-emit --version
+
+readiness-rms 0.1.0
